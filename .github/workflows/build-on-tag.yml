@@ -37,7 +37,7 @@ jobs:
 
       - name: Rename binary
         run: |
-          mv build/CardputerTracker.ino.bin CardputerTracker-${{ github.ref_name }}.bin
+          mv build/CardputerTracker.ino.merged.bin CardputerTracker-${{ github.ref_name }}.bin
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
