@@ -1,2 +1,2 @@
-# Cardputer-Adv-Tracker
+# Cardputer Tracker
 A music tracker for the Cardputer ADV

@@ -1,5 +1,5 @@
 // ============================================================
-// CardputerTracker V2 - Acid Synth Tracker
+// CardputerTracker - Acid Synth Tracker
 // For M5Stack Cardputer-Adv (ESP32-S3)
 // ============================================================
 // Real-time wavetable synthesis with resonant filters,
@@ -720,7 +720,7 @@ void drawHelpPage() {
   int y = 2;
   canvas.setTextSize(1);
   canvas.setTextColor(0x07FF);
-  canvas.setCursor(2, y); canvas.print("CARDPUTER TRACKER V2");
+  canvas.setCursor(2, y); canvas.print("CARDPUTER TRACKER");
   y += 12;
   canvas.drawFastHLine(0, y-2, SCREEN_W, 0x2104);
 
@@ -1093,7 +1093,7 @@ void setup() {
   canvas.print("CARDPUTER");
   canvas.setCursor(15, 32);
   canvas.setTextColor(0x07E0);
-  canvas.print("TRACKER V2");
+  canvas.print("TRACKER");
 
   canvas.setTextSize(1);
   canvas.setTextColor(0xFBE0);

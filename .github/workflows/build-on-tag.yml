@@ -1,0 +1,45 @@
+name: Build Binary on Tag
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+
+      - name: Install board definitions
+        run: |
+          arduino-cli config init --overwrite
+          arduino-cli core install esp32:esp32@3.0.0
+
+      - name: Install M5Cardputer library
+        run: |
+          arduino-cli lib install M5Cardputer
+
+      - name: Compile sketch
+        run: |
+          arduino-cli compile --fqbn esp32:esp32:m5stack_cardputer_adv \
+            CardputerTracker.ino \
+            --output-dir build
+
+      - name: Rename binary
+        run: |
+          mv build/CardputerTracker.ino.bin CardputerTracker-${{ github.ref_name }}.bin
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: CardputerTracker-${{ github.ref_name }}.bin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
