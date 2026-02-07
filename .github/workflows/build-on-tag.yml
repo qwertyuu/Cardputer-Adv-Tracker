@@ -30,7 +30,7 @@ jobs:
       - name: Compile sketch
         run: |
           arduino-cli compile --fqbn esp32:esp32:m5stack_cardputer_adv \
-            CardputerTracker.ino \
+            . \
             --output-dir build
 
       - name: Rename binary
