@@ -1,0 +1,26 @@
+# Arduino build artifacts
+CardputerTracker/build/
+*.elf
+*.bin
+*.hex
+*.map
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Claude Code
+.claude/

@@ -1,0 +1,61 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for Cardputer Tracker
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please provide details below to help us understand your idea.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Describe the feature you'd like to see
+      placeholder: I would like to have...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case / Motivation
+      description: Why would this feature be useful? What problem does it solve?
+      placeholder: This would help me...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: performance-impact
+    attributes:
+      label: Potential Audio Performance Impact
+      description: Do you think this feature might affect real-time audio performance?
+      options:
+        - "No impact expected"
+        - "Minimal impact (UI changes only)"
+        - "Moderate impact (might affect CPU usage)"
+        - "High impact (audio processing changes)"
+        - "Unknown / Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-implementation
+    attributes:
+      label: Proposed Implementation (Optional)
+      description: If you have ideas on how this could be implemented, share them here
+      placeholder: This could be implemented by...
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or features?
+      placeholder: I also thought about...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or examples that might help
