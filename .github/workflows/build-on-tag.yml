@@ -21,7 +21,7 @@ jobs:
       - name: Install board definitions
         run: |
           arduino-cli config init --overwrite
-          arduino-cli core install esp32:esp32@3.0.0
+          arduino-cli core install m5stack:esp32@3.0.0
 
       - name: Install M5Cardputer library
         run: |
@@ -29,7 +29,7 @@ jobs:
 
       - name: Compile sketch
         run: |
-          arduino-cli compile --fqbn esp32:esp32:m5stack_cardputer_adv \
+          arduino-cli compile --fqbn m5stack:esp32:m5stack_cardputer \
             --output-dir build \
             CardputerTracker
 
