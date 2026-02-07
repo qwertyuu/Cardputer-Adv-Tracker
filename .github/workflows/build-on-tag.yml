@@ -21,6 +21,7 @@ jobs:
       - name: Install board definitions
         run: |
           arduino-cli config init --overwrite
+          arduino-cli config add board_manager.additional_urls https://static-cdn.m5stack.com/resource/arduino/package_m5stack_index.json
           arduino-cli core install m5stack:esp32@3.0.0
 
       - name: Install M5Cardputer library
