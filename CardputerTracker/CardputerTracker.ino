@@ -807,6 +807,12 @@ void handleInput() {
     return;
   }
 
+  // TAB goes to next page
+  if (status.tab) {
+    curPage = (Page)((curPage + 1) % PAGE_COUNT);
+    needRedraw = true;
+  }
+
   // Process character keys
   for (auto key : status.word) {
     // --- Synth parameter adjustment (works anytime) ---
@@ -930,7 +936,7 @@ void handleInput() {
           needRedraw = true;
         }
         break;
-    }
+      }
   }
 
   // Long press detection for page switch: use Fn or opt key
@@ -1102,7 +1108,7 @@ void setup() {
 
   canvas.setTextColor(TFT_WHITE);
   canvas.setCursor(10, 74);
-  canvas.print("SPACE=Play  P=Demo  BtnA=Page");
+  canvas.print("SPACE=Play  P=Demo  TAB=Page");
   canvas.setCursor(10, 86);
   canvas.print("ZXCVBNM=Notes  1-4=Track");
   canvas.setCursor(10, 98);
